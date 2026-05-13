@@ -366,6 +366,141 @@
     video.addEventListener("loadeddata", tryPlay, { once: true });
   }
 
+  // ── Gallery Lightbox ──
+  function initLightbox() {
+    var lightbox = document.getElementById("lightbox");
+    var items = document.querySelectorAll(".gallery-item");
+    if (!lightbox || !items.length) return;
+
+    var imgEl = lightbox.querySelector(".lightbox-img");
+    var labelEl = lightbox.querySelector(".lightbox-caption-label");
+    var titleEl = lightbox.querySelector(".lightbox-caption-title");
+    var closeBtn = lightbox.querySelector(".lightbox-close");
+    var prevBtn = lightbox.querySelector(".lightbox-nav--prev");
+    var nextBtn = lightbox.querySelector(".lightbox-nav--next");
+
+    function buildSlideFromItem(item) {
+      var picture = item.querySelector("picture");
+      var img = item.querySelector("img");
+      var webp = picture ? picture.querySelector("source[type='image/webp']") : null;
+      var label = item.querySelector(".gallery-caption-label");
+      var title = item.querySelector(".gallery-caption-title");
+      return {
+        src: img ? img.getAttribute("src") : "",
+        webp: webp ? webp.getAttribute("srcset") : "",
+        alt: img ? img.getAttribute("alt") : "",
+        label: label ? label.textContent : "",
+        title: title ? title.textContent : "",
+      };
+    }
+
+    // Rebuilt on open so hidden (mobile-only) items are included only when visible
+    var slides = [];
+    var currentIndex = 0;
+    var lastFocused = null;
+
+    function render(index) {
+      var s = slides[index];
+      // Prefer webp if the browser likely supports it (all modern browsers do)
+      imgEl.setAttribute("src", s.webp || s.src);
+      imgEl.setAttribute("alt", s.alt);
+      labelEl.textContent = s.label;
+      titleEl.textContent = s.title;
+    }
+
+    function open(triggerItem) {
+      // Rebuild slides from currently visible items only
+      slides = [];
+      var startIndex = 0;
+      Array.prototype.forEach.call(items, function (item) {
+        if (item.offsetParent === null) return; // skip hidden
+        if (item === triggerItem) startIndex = slides.length;
+        slides.push(buildSlideFromItem(item));
+      });
+      if (!slides.length) return;
+      currentIndex = startIndex;
+      lastFocused = document.activeElement;
+      render(currentIndex);
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function close() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    function next() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      render(currentIndex);
+    }
+
+    function prev() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      render(currentIndex);
+    }
+
+    items.forEach(function (item) {
+      item.setAttribute("role", "button");
+      item.setAttribute("tabindex", "0");
+      item.addEventListener("click", function () {
+        open(item);
+      });
+      item.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          open(item);
+        }
+      });
+    });
+
+    closeBtn.addEventListener("click", close);
+    nextBtn.addEventListener("click", next);
+    prevBtn.addEventListener("click", prev);
+
+    // Backdrop click
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) close();
+    });
+
+    // Keyboard
+    document.addEventListener("keydown", function (e) {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowRight") next();
+      else if (e.key === "ArrowLeft") prev();
+    });
+
+    // Touch swipe
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var touchMoved = false;
+    lightbox.addEventListener("touchstart", function (e) {
+      if (!e.touches || !e.touches.length) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchMoved = false;
+    }, { passive: true });
+
+    lightbox.addEventListener("touchmove", function () {
+      touchMoved = true;
+    }, { passive: true });
+
+    lightbox.addEventListener("touchend", function (e) {
+      if (!touchMoved || !e.changedTouches || !e.changedTouches.length) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      var dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) next();
+        else prev();
+      }
+    }, { passive: true });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initHero();
     initScrollReveal();
@@ -375,5 +510,6 @@
     initSparkle();
     initMobileReserve();
     initMobileVideo();
+    initLightbox();
   });
 })();

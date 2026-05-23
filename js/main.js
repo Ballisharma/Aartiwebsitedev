@@ -501,6 +501,52 @@
     }, { passive: true });
   }
 
+  // ── Careers Modal ──
+  function initCareersModal() {
+    var modal = document.getElementById("careers-modal");
+    var triggers = document.querySelectorAll("[data-careers-trigger]");
+    if (!modal || !triggers.length) return;
+
+    var closeBtn = modal.querySelector(".careers-modal-close");
+    var panel = modal.querySelector(".careers-modal-panel");
+    var lastFocused = null;
+
+    function open() {
+      lastFocused = document.activeElement;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function close() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        open();
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", close);
+
+    // Backdrop click (clicks outside the panel)
+    modal.addEventListener("click", function (e) {
+      if (panel && !panel.contains(e.target)) close();
+    });
+
+    // Keyboard
+    document.addEventListener("keydown", function (e) {
+      if (!modal.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initHero();
     initScrollReveal();
@@ -511,5 +557,6 @@
     initMobileReserve();
     initMobileVideo();
     initLightbox();
+    initCareersModal();
   });
 })();

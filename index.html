@@ -63,10 +63,11 @@
       <ul class="nav-menu" id="nav-menu" role="list">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#drinks" class="nav-link">Drinks</a></li>
         <li><a href="#gallery" class="nav-link">Gallery</a></li>
         <li><a href="#events" class="nav-link">Events</a></li>
         <li><a href="#visit" class="nav-link">Visit</a></li>
-        <li><a href="mailto:info@dravidanyc.com?subject=Careers%20Inquiry" class="nav-link">Careers</a></li>
+        <li><a href="mailto:info@dravidanyc.com?subject=Careers%20Inquiry" class="nav-link" data-careers-trigger>Careers</a></li>
         <li>
           <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="nav-link nav-cta" target="_blank" rel="noopener noreferrer">
             Reserve
@@ -195,6 +196,101 @@
       </div>
     </div>
 
+    <!-- From the Kitchen — Dish showcase before the menu -->
+    <section id="dishes" class="section section-dishes" aria-label="From the Kitchen">
+      <div class="container">
+        <div class="dishes-header reveal">
+          <p class="section-label">From the Kitchen</p>
+          <h2 class="section-title">Plates &amp; Stories</h2>
+          <div class="gallery-ornament" aria-hidden="true">
+            <span class="gallery-ornament-line"></span>
+            <span class="gallery-ornament-diamond"></span>
+            <span class="gallery-ornament-line"></span>
+          </div>
+          <p class="dishes-intro">A glimpse of the table&mdash;each plate a thread in the diaspora story.</p>
+        </div>
+      </div>
+
+      <figure class="dishes-feature reveal">
+        <img
+          src="images/dishes/spread-overhead.jpg"
+          alt="An overhead spread of Dravida signature dishes: kebabs, deviled eggs, curries, and breads on the table"
+          loading="lazy"
+        />
+        <figcaption class="dishes-feature-caption">
+          <span class="dishes-feature-line"></span>
+          <span class="dishes-feature-text">A table set for the diaspora</span>
+          <span class="dishes-feature-line"></span>
+        </figcaption>
+      </figure>
+
+      <div class="container">
+        <div class="dishes-grid">
+          <figure class="dish-item reveal">
+            <div class="dish-image-wrap">
+              <img
+                src="images/dishes/deviled-egg-bejo.jpg"
+                alt="Deviled Egg Bejo with crispy shallot, tamarind and Burmese roasted masala"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="dish-caption">
+              <span class="dish-caption-label">Snack</span>
+              <span class="dish-caption-title">Deviled Egg Bejo</span>
+              <span class="dish-caption-influence">Myanmar</span>
+            </figcaption>
+          </figure>
+
+          <figure class="dish-item reveal">
+            <div class="dish-image-wrap">
+              <img
+                src="images/dishes/uyghur-sirloin-kawap.jpg"
+                alt="Uyghur Sirloin Kawap on a banana-leaf-shaped plate over garlic yogurt"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="dish-caption">
+              <span class="dish-caption-label">Small Plate</span>
+              <span class="dish-caption-title">Uyghur Sirloin Kawap</span>
+              <span class="dish-caption-influence">The Spice Route</span>
+            </figcaption>
+          </figure>
+
+          <figure class="dish-item reveal">
+            <div class="dish-image-wrap">
+              <img
+                src="images/dishes/basil-chicken-kofta.jpg"
+                alt="Basil Chicken Kofta in turmeric and lemongrass curry with mango cucumber slaw"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="dish-caption">
+              <span class="dish-caption-label">Small Plate</span>
+              <span class="dish-caption-title">Basil Chicken Kofta</span>
+              <span class="dish-caption-influence">Chef&rsquo;s Original</span>
+            </figcaption>
+          </figure>
+
+          <figure class="dish-item reveal">
+            <div class="dish-image-wrap">
+              <img
+                src="images/dishes/asparagus-poriyal.jpg"
+                alt="Fire-roasted asparagus poriyal being spooned with curry leaf coconut mustard tadka"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="dish-caption">
+              <span class="dish-caption-label">Side</span>
+              <span class="dish-caption-title">Asparagus Poriyal</span>
+              <span class="dish-caption-influence">Tamil Nadu</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="dishes-footnote reveal">Explore the full menu below.</p>
+      </div>
+    </section>
+
     <!-- Menu Section -->
     <section id="menu" class="section section-menu">
       <div class="container">
@@ -219,13 +315,13 @@
                 <h3 class="menu-section-title">Snacks</h3>
                 <div class="menu-items">
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Deviled Egg Bejo <span class="menu-diet menu-diet--veg" title="Vegetarian"></span></h4>
+                    <h4 class="menu-item-name">Deviled Egg Bejo <span class="menu-diet menu-diet--veg" title="Vegetarian"></span> <span class="menu-diet menu-diet--egg" title="Egg"></span></h4>
                     <p class="menu-item-desc">Crispy Shallot &amp; Garlic, Tamarind, Burmese Roasted Masala</p>
                     <p class="menu-item-influence">Influence: Myanmar</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Khameeri Roti <span class="menu-diet menu-diet--celiac" title="Celiac"></span> <span class="menu-diet menu-diet--veg" title="Vegetarian"></span></h4>
-                    <p class="menu-item-desc">White Cultured Butter, Chili Chutney</p>
+                    <h4 class="menu-item-name">Khameeri Roti <span class="menu-diet menu-diet--veg" title="Vegetarian"></span> <span class="menu-diet menu-diet--gluten" title="Gluten"></span> <span class="menu-diet menu-diet--dairy" title="Dairy"></span></h4>
+                    <p class="menu-item-desc">White Cultured Butter, Kashmiri Chili Chutney</p>
                     <p class="menu-item-influence">Influence: Persia / Afghanistan</p>
                   </div>
                 </div>
@@ -236,38 +332,38 @@
                 <h3 class="menu-section-title">Small Plates</h3>
                 <div class="menu-items">
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Doubles <span class="menu-diet menu-diet--celiac" title="Celiac"></span> <span class="menu-diet menu-diet--veg" title="Vegetarian"></span></h4>
-                    <p class="menu-item-desc">Chana, Pickled Scotch Bonnet, Shadow Beni Chutney, Fried Plantain</p>
+                    <h4 class="menu-item-name">Doubles <span class="menu-diet menu-diet--veg" title="Vegetarian"></span> <span class="menu-diet menu-diet--gluten" title="Gluten"></span></h4>
+                    <p class="menu-item-desc">Chana, Scotch Bonnet Hot Sauce, Shadow Beni Chutney</p>
                     <p class="menu-item-influence">Influence: Trinidad</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Choriz P&atilde;o <span class="menu-diet menu-diet--celiac" title="Celiac"></span></h4>
-                    <p class="menu-item-desc">Goan Pork Sausage, Chili Coconut Chutney, Portuguese Bread</p>
+                    <h4 class="menu-item-name">Choriz P&atilde;o <span class="menu-diet menu-diet--gluten" title="Gluten"></span></h4>
+                    <p class="menu-item-desc">Goan Pork Sausage, Chili Coconut Chutney, Cabbage Salad, Portuguese Bread</p>
                     <p class="menu-item-influence">Influence: Portugal / Goa</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Duck Nihari Pot Pie <span class="menu-diet menu-diet--celiac" title="Celiac"></span></h4>
+                    <h4 class="menu-item-name">Duck Nihari Hand Pie <span class="menu-diet menu-diet--gluten" title="Gluten"></span> <span class="menu-diet menu-diet--halal" title="Halal Protein"></span></h4>
                     <p class="menu-item-desc">Paki Braised Duck Leg Stew, Duck Fat Pastry</p>
                     <p class="menu-item-influence">Influence: Pakistan</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Idli &amp; Clams <span class="menu-diet menu-diet--seafood" title="Seafood"></span></h4>
-                    <p class="menu-item-desc">Anchovy Seeni Sambal</p>
+                    <h4 class="menu-item-name">Shrimp &amp; Idli <span class="menu-diet menu-diet--shellfish" title="Shellfish"></span></h4>
+                    <p class="menu-item-desc">Bonito Seeni Sambal</p>
                     <p class="menu-item-influence">Influence: Indonesia&ndash;South India</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Basil Chicken Kofta <span class="menu-diet menu-diet--seafood" title="Seafood"></span></h4>
-                    <p class="menu-item-desc">Turmeric Root &amp; Lemongrass Curry, Mango Slaw</p>
+                    <h4 class="menu-item-name">Basil Chicken Kofta <span class="menu-diet menu-diet--egg" title="Egg"></span> <span class="menu-diet menu-diet--gluten" title="Gluten"></span></h4>
+                    <p class="menu-item-desc">Turmeric Root &amp; Lemongrass Curry, Mango Cucumber Slaw</p>
                     <p class="menu-item-story">Created on a Food Network Show, celebrating Aarthi&rsquo;s love for South Asian ingredients</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Lhasa Lamb Momo <span class="menu-diet menu-diet--celiac" title="Celiac"></span></h4>
+                    <h4 class="menu-item-name">Lhasa Lamb Momo <span class="menu-diet menu-diet--gluten" title="Gluten"></span> <span class="menu-diet menu-diet--sesame" title="Sesame Seeds"></span> <span class="menu-diet menu-diet--halal" title="Halal Protein"></span></h4>
                     <p class="menu-item-desc">Tomato Sesame Chutney</p>
                     <p class="menu-item-influence">Influence: Nepal</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Uyghur Sirloin Kawap</h4>
-                    <p class="menu-item-desc">Cumin, Chili Sesame Crunch, Garlic Yogurt, Market Greens</p>
+                    <h4 class="menu-item-name">Uyghur Sirloin Kawap <span class="menu-diet menu-diet--sesame" title="Sesame Seeds"></span> <span class="menu-diet menu-diet--dairy" title="Dairy"></span></h4>
+                    <p class="menu-item-desc">Long Pepper &amp; Timut Pepper Rub, Chili Sesame Oil, Garlic Yogurt</p>
                     <p class="menu-item-influence">Influence: the Spice Route through Northwestern China</p>
                   </div>
                 </div>
@@ -303,47 +399,54 @@
                 <div class="menu-items">
                   <div class="menu-item">
                     <h4 class="menu-item-name">Fire Roasted Sweet Potato and Chilli Ema Datshi <span class="menu-diet menu-diet--veg" title="Vegetarian"></span></h4>
-                    <p class="menu-item-desc">Creamy Cheese Sauce and Steamed Rice</p>
+                    <p class="menu-item-desc">Creamy Cheese Sauce, Roasted Peppers, Steamed Rice</p>
                     <p class="menu-item-influence">Influence: Bhutan</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Black Bass Puyabaise <span class="menu-diet menu-diet--seafood" title="Seafood"></span></h4>
-                    <p class="menu-item-desc">Coconut Rice</p>
+                    <h4 class="menu-item-name">Summer Shukto <span class="menu-diet menu-diet--veg" title="Vegetarian"></span> <span class="menu-diet menu-diet--nuts" title="Nuts"></span></h4>
+                    <p class="menu-item-desc">Corn, Eggplant &amp; Tomato, Mustard Sauce, Coconut Rice</p>
+                    <p class="menu-item-influence">Influence: Bangladesh</p>
+                  </div>
+                  <div class="menu-item">
+                    <h4 class="menu-item-name">Wild Local Striped Bass Puyabaise <span class="menu-diet menu-diet--shellfish" title="Shellfish"></span></h4>
+                    <p class="menu-item-desc">Clams, Coconut Rice</p>
                     <p class="menu-item-influence">Influence: Indo-French from Pondicheri, India</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Oxtail Bunny Chow</h4>
-                    <p class="menu-item-desc">Durban-Indian Oxtail Curry, White Bread, Herbs &amp; Pickles</p>
+                    <h4 class="menu-item-name">Oxtail Bunny Chow <span class="menu-diet menu-diet--gluten" title="Gluten"></span> <span class="menu-diet menu-diet--dairy" title="Dairy"></span></h4>
+                    <p class="menu-item-desc">Durban-Indian Oxtail Curry, Brioche, Pickled Habanero</p>
                     <p class="menu-item-influence">Influence: South Africa</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Guyanese Beef Curry</h4>
-                    <p class="menu-item-desc">Mango Achar, Market &lsquo;Bhaji&rsquo; Greens, Coconut Rice</p>
+                    <h4 class="menu-item-name">Guyanese Lamb Chop Curry <span class="menu-diet menu-diet--halal" title="Halal Protein"></span></h4>
+                    <p class="menu-item-desc">Mango Achaar, Market &lsquo;Bhaji&rsquo; Greens, Coconut Rice</p>
                     <p class="menu-item-influence">Influence: Guyana</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Blue Crab Curry Ramen <span class="menu-diet menu-diet--seafood" title="Seafood"></span></h4>
-                    <p class="menu-item-desc">Blue Crab, Curry Butter, Dill &amp; Chives</p>
+                    <h4 class="menu-item-name">Blue Crab Curry Ramen <span class="menu-diet menu-diet--shellfish" title="Shellfish"></span></h4>
+                    <p class="menu-item-desc">Blue Crab, Curry Butter, Green Beans, Dill &amp; Chives</p>
                     <p class="menu-item-influence">Influence: A play on Maggi noodles, India&rsquo;s iconic instant snack</p>
                   </div>
                   <div class="menu-item">
-                    <h4 class="menu-item-name">Spicy Baby Back Rib Vindaloo</h4>
-                    <p class="menu-item-desc">Laccha Onion, Coconut Rice</p>
-                    <p class="menu-item-influence">Influence: Indo Portuguese</p>
-                  </div>
-                  <div class="menu-item">
-                    <h4 class="menu-item-name">Schezwan Wood Fire Roasted Lobster <span class="menu-diet menu-diet--seafood" title="Seafood"></span></h4>
+                    <h4 class="menu-item-name">Schezwan Wood Fire Roasted Lobster <span class="menu-diet menu-diet--shellfish" title="Shellfish"></span></h4>
                     <p class="menu-item-desc">&lsquo;Crispy&rsquo; Rice, Sweet &amp; Spicy Sauce</p>
                     <p class="menu-item-influence">Influence: Indo-Chinese</p>
-                  </div>
-                  <div class="menu-item">
-                    <h4 class="menu-item-name">Nasi Kandar</h4>
-                    <p class="menu-item-desc">Malay Roast Chicken, Amma&rsquo;s Shrimp Curry, Soft Egg, Cabbage &amp; Beans Poriyal, Sambal, Lemon Rice</p>
-                    <p class="menu-item-influence">Influence: Indo-Malay</p>
                   </div>
                 </div>
               </div>
 
+            </div>
+          </div>
+
+          <!-- LARGER PLATE — full-width signature feast -->
+          <div class="menu-section menu-section--feast reveal">
+            <h3 class="menu-section-title">Larger Plate</h3>
+            <div class="menu-items">
+              <div class="menu-item">
+                <h4 class="menu-item-name">Nasi Kandar Feast <span class="menu-diet menu-diet--shellfish" title="Shellfish"></span> <span class="menu-diet menu-diet--halal" title="Halal Protein"></span></h4>
+                <p class="menu-item-desc">Malay Roast Chicken, Amma&rsquo;s Prawn, Soft Egg, Cabbage &amp; Beans Poriyal, Coconut Sambal, Lemon Rice</p>
+                <p class="menu-item-influence">Influence: Indo-Malay</p>
+              </div>
             </div>
           </div>
 
@@ -352,35 +455,354 @@
             <h3 class="menu-section-title">Desserts</h3>
             <div class="menu-items">
               <div class="menu-item">
-                <h4 class="menu-item-name">Sweet Milk Soft Serve</h4>
-                <p class="menu-item-desc">Black Rice Pudding, Puffed Amaranth, Salted Jaggery Caramel</p>
+                <h4 class="menu-item-name">Black Rice Milk Soft Serve <span class="menu-diet menu-diet--dairy" title="Dairy"></span></h4>
+                <p class="menu-item-desc">Puffed Rice, Seasonal Fruit Compote</p>
                 <p class="menu-item-influence">Influence: North India</p>
               </div>
               <div class="menu-item">
-                <h4 class="menu-item-name">Warm Srilankan Lavariya</h4>
-                <p class="menu-item-desc">Lacey Rice Crepe, Coconut &amp; Cardamom Filling, Sweet Coconut Condensed Milk, Toasted Coconut</p>
+                <h4 class="menu-item-name">Tender Coconut Lavariya</h4>
+                <p class="menu-item-desc">Lacey Rice Crepe, Coconut &amp; Cardamom, Sweet Coconut Milk, Toasted Coconut</p>
                 <p class="menu-item-influence">Influence: Sri Lanka</p>
               </div>
               <div class="menu-item">
-                <h4 class="menu-item-name">Birthday Black Forrest</h4>
-                <p class="menu-item-desc">Konjum Coffee Chocolate Cake, Hudson Cherries, Battenkill Cream</p>
+                <h4 class="menu-item-name">Birthday Black Forrest <span class="menu-diet menu-diet--dairy" title="Dairy"></span> <span class="menu-diet menu-diet--gluten" title="Gluten"></span> <span class="menu-diet menu-diet--egg" title="Egg"></span></h4>
+                <p class="menu-item-desc">Konjum Coffee Chocolate Cake, Cherries, Vanilla Bean Custard Cream</p>
+                <p class="menu-item-story">Growing up this was India&rsquo;s celebration cake and found in every bakery. Aarthi didn&rsquo;t know it was German until she became a cook.</p>
               </div>
             </div>
           </div>
 
-          <!-- Dietary legend — matching PDF footer -->
+          <!-- Dietary legend — full key matching the May 2026 menu -->
           <div class="menu-legend reveal" aria-label="Dietary key">
-            <span class="menu-legend-item"><span class="menu-diet menu-diet--celiac"></span> Celiac</span>
+            <span class="menu-legend-item"><span class="menu-diet menu-diet--gluten"></span> Gluten</span>
             <span class="menu-legend-item"><span class="menu-diet menu-diet--veg"></span> Vegetarian</span>
-            <span class="menu-legend-item"><span class="menu-diet menu-diet--seafood"></span> Seafood</span>
-            <span class="menu-legend-item"><span class="menu-diet menu-diet--peanut"></span> Peanut</span>
+            <span class="menu-legend-item"><span class="menu-diet menu-diet--shellfish"></span> Shellfish</span>
+            <span class="menu-legend-item"><span class="menu-diet menu-diet--nuts"></span> Nuts</span>
+            <span class="menu-legend-item"><span class="menu-diet menu-diet--egg"></span> Egg</span>
+            <span class="menu-legend-item"><span class="menu-diet menu-diet--dairy"></span> Dairy</span>
+            <span class="menu-legend-item"><span class="menu-diet menu-diet--sesame"></span> Sesame</span>
+            <span class="menu-legend-item"><span class="menu-diet menu-diet--halal"></span> Halal</span>
           </div>
 
         </div>
 
         <div class="menu-footer reveal">
           <p class="menu-note">
-            Our menu evolves with the seasons. Please inform your server of any dietary restrictions or allergies.
+            Our kitchen is seed-oil free. A 20% gratuity is added to all checks for our service staff. Please inform your server of any dietary restrictions or allergies.
+          </p>
+          <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-menu-cta" target="_blank" rel="noopener noreferrer">
+            Make a Reservation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section id="drinks" class="section section-menu section-drinks">
+      <div class="container">
+        <div class="menu-header reveal">
+          <p class="section-label">The Bar &amp; Cellar</p>
+          <h2 class="section-title">Drinks</h2>
+          <p class="menu-intro">
+            Diaspora-spiced cocktails, low-intervention wines, and craft beer&mdash;every starred pour can be made spirit-free on request.
+          </p>
+        </div>
+
+        <div class="menu-showcase menu-card">
+
+          <div class="menu-grid drinks-grid">
+
+            <!-- LEFT COLUMN — COCKTAILS -->
+            <div class="menu-col">
+
+              <!-- LASSI OF THE HOUR -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">Lassi of the Hour</h3>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Passionfruit Lassi <span class="menu-diet menu-diet--dairy" title="Dairy"></span> <span class="drink-zero-mark" title="Can be made without alcohol">&#9733;</span></h4>
+                      <span class="drink-price">$13</span>
+                    </div>
+                    <p class="menu-item-desc">Passionfruit, Cardamom, Indian Yogurt, Coconut Cream</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HOUSE MADE FIZZIES -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">House-Made Fizzies</h3>
+                <p class="drink-section-tag">For light ABV lovers &amp; sober sports</p>
+                <div class="drink-price-header" aria-hidden="true">
+                  <span>Cocktail</span><span>N/A</span>
+                </div>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Dravida Highball <span class="drink-zero-mark" title="Can be made without alcohol">&#9733;</span></h4>
+                      <span class="drink-prices"><span>$19</span><span>$14</span></span>
+                    </div>
+                    <p class="menu-item-desc">Velvet Falernum + Canton Ginger Liqueur, hibiscus, kaffir lime leaf + baking spices</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Kola <span class="drink-zero-mark" title="Can be made without alcohol">&#9733;</span></h4>
+                      <span class="drink-prices"><span>$19</span><span>$14</span></span>
+                    </div>
+                    <p class="menu-item-desc">Angostura Amaro, Kola Nut, Coffee Fruit + myriad of magical spices</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Orange Cream <span class="menu-diet menu-diet--dairy" title="Dairy"></span> <span class="drink-zero-mark" title="Can be made without alcohol">&#9733;</span></h4>
+                      <span class="drink-prices"><span>$19</span><span>$14</span></span>
+                    </div>
+                    <p class="menu-item-desc">Roots Rakomelo Honey + Lustau Vermut, Tahitian Vanilla Bean, Salted Whip Cream</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Lime Cordial <span class="drink-zero-mark" title="Can be made without alcohol">&#9733;</span></h4>
+                      <span class="drink-prices"><span>$19</span><span>$14</span></span>
+                    </div>
+                    <p class="menu-item-desc">Velvet Falernum + Lustau Vermut, Ginger, Kaffir Lime Leaf, Allspice, Coriander, Cracked Mustard</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Salted Grape <span class="drink-zero-mark" title="Can be made without alcohol">&#9733;</span></h4>
+                      <span class="drink-prices"><span>$19</span><span>$14</span></span>
+                    </div>
+                    <p class="menu-item-desc">Lustau Manzanilla, Seedless Muscat Grape</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HEAVY HITTERS -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">Heavy Hitters</h3>
+                <p class="drink-section-tag">For the unapologetic lush</p>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Spicy Margarita Vibes</h4>
+                      <span class="drink-price">$21</span>
+                    </div>
+                    <p class="menu-item-desc">Ancho Chile Liqueur, Ichiko Shochu, Dragon&rsquo;s Breath + Aleppo extract</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Prospector Gamble</h4>
+                      <span class="drink-price">$22</span>
+                    </div>
+                    <p class="menu-item-desc">Shochu, Angostura Amaro, Roots Honey, Lustau Manzanilla</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DESSERT CORDIALS -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">Dessert Cordials</h3>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Sekai Itto Orange Sake</h4>
+                      <span class="drink-price">$14</span>
+                    </div>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Sekai Itto Mango Plum Fruit Sake</h4>
+                      <span class="drink-price">$14</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN — WINES -->
+            <div class="menu-col">
+
+              <!-- WHITE -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">White</h3>
+                <div class="drink-price-header" aria-hidden="true">
+                  <span>6 oz</span><span>Bottle</span>
+                </div>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Fuso, Verdicchio</h4>
+                      <span class="drink-prices"><span>$16</span><span>$48</span></span>
+                    </div>
+                    <p class="menu-item-desc">Marche, Italy &middot; Very dry, slightly effervescent</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Folk Machine, Sauvignon Blanc</h4>
+                      <span class="drink-prices"><span>$18</span><span>$54</span></span>
+                    </div>
+                    <p class="menu-item-desc">Potter Valley, California &middot; Medium body, for the standard Sauvie B lover</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">LaOsa, Albari&ntilde;o</h4>
+                      <span class="drink-prices"><span>$19</span><span>$58</span></span>
+                    </div>
+                    <p class="menu-item-desc">Galicia, Spain &middot; Fuller bodied, for the juicy &amp; Chard lovers</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Banyan, Gew&uuml;rztraminer</h4>
+                      <span class="drink-prices"><span>$14</span><span>$42</span></span>
+                    </div>
+                    <p class="menu-item-desc">Monterey, California &middot; For the sweeter, dry Riesling lover</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RED -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">Red</h3>
+                <div class="drink-price-header" aria-hidden="true">
+                  <span>6 oz</span><span>Bottle</span>
+                </div>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Cardedu, Monica de Sardegna</h4>
+                      <span class="drink-prices"><span>$21</span><span>$64</span></span>
+                    </div>
+                    <p class="menu-item-desc">Sardinia, Italy &middot; For the super-dry, extra-light bodied red lover</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Folk Machine, Red Blend</h4>
+                      <span class="drink-prices"><span>$18</span><span>$54</span></span>
+                    </div>
+                    <p class="menu-item-desc">California &middot; For the medium-bodied Pinot Noir lover</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Fuso, Gamay</h4>
+                      <span class="drink-prices"><span>$19</span><span>$58</span></span>
+                    </div>
+                    <p class="menu-item-desc">Loire Valley, France &middot; For the one who loves a chilled C&ocirc;te-du-Rh&ocirc;ne vibe</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Mas d&rsquo;En Gil, Red Blend</h4>
+                      <span class="drink-prices"><span>$28</span><span>$85</span></span>
+                    </div>
+                    <p class="menu-item-desc">Catalonia, Spain &middot; For the full-bodied juicy red lover</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Flavonius Vinho Tinto</h4>
+                      <span class="drink-prices"><span>&mdash;</span><span>$68</span></span>
+                    </div>
+                    <p class="menu-item-desc">Lisbon, Portugal</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ROSE / ORANGE -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">Ros&eacute; &amp; Orange</h3>
+                <div class="drink-price-header" aria-hidden="true">
+                  <span>6 oz</span><span>Bottle</span>
+                </div>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Rocamadre Rosado</h4>
+                      <span class="drink-prices"><span>$17</span><span>$51</span></span>
+                    </div>
+                    <p class="menu-item-desc">Mendoza, Argentina &middot; Rich, fruity, crisp</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Flavonius Curtimenta</h4>
+                      <span class="drink-prices"><span>&mdash;</span><span>$69</span></span>
+                    </div>
+                    <p class="menu-item-desc">Lisbon, Portugal &middot; Natural orange wine&mdash;slightly acidic, mineral finish</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SPARKLING -->
+              <div class="menu-section reveal">
+                <h3 class="menu-section-title">Sparkling</h3>
+                <div class="drink-price-header" aria-hidden="true">
+                  <span>5 oz</span><span>Bottle</span>
+                </div>
+                <div class="menu-items">
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Col de Luna Prosecco</h4>
+                      <span class="drink-prices"><span>$15</span><span>$50</span></span>
+                    </div>
+                    <p class="menu-item-desc">Veneto, Italy</p>
+                  </div>
+                  <div class="menu-item drink-item">
+                    <div class="drink-row">
+                      <h4 class="menu-item-name">Woody&rsquo;s Sparkling N/A Ros&eacute; <span class="drink-zero-mark" title="Non-alcoholic">&#9733;</span></h4>
+                      <span class="drink-prices"><span>&mdash;</span><span>$14</span></span>
+                    </div>
+                    <p class="menu-item-desc">California &middot; Mini bottles</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- BEER — full-width row -->
+          <div class="menu-section menu-section--beer reveal">
+            <h3 class="menu-section-title">Beer</h3>
+            <div class="beer-grid">
+              <div class="menu-item drink-item">
+                <div class="drink-row">
+                  <h4 class="menu-item-name">Three&rsquo;s Brewing Gowanus</h4>
+                  <span class="drink-price">$15</span>
+                </div>
+                <p class="menu-item-desc">Rice Lager &middot; Brooklyn</p>
+              </div>
+              <div class="menu-item drink-item">
+                <div class="drink-row">
+                  <h4 class="menu-item-name">Talea</h4>
+                  <span class="drink-price">$12</span>
+                </div>
+                <p class="menu-item-desc">Pilsner &middot; Brooklyn</p>
+              </div>
+              <div class="menu-item drink-item">
+                <div class="drink-row">
+                  <h4 class="menu-item-name">KCBC Superhero Sidekicks</h4>
+                  <span class="drink-price">$13</span>
+                </div>
+                <p class="menu-item-desc">IPA &middot; Brooklyn</p>
+              </div>
+              <div class="menu-item drink-item">
+                <div class="drink-row">
+                  <h4 class="menu-item-name">Athletic Brewing Upside Dawn <span class="drink-zero-mark" title="Non-alcoholic">&#9733;</span></h4>
+                  <span class="drink-price">$12</span>
+                </div>
+                <p class="menu-item-desc">N/A Wheat Lager &middot; Connecticut</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ZERO-PROOF callout -->
+          <div class="drinks-zero-callout reveal" aria-label="Zero-proof note">
+            <span class="drink-zero-mark" aria-hidden="true">&#9733;</span>
+            <p>
+              Anything starred is poured spirit-free on request&mdash;our House Fizzies show their N/A price beside the cocktail price.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="menu-footer reveal">
+          <p class="menu-note">
+            Our cellar leans low-intervention and small-grower. Vintages rotate&mdash;ask your server about today&rsquo;s pour.
           </p>
           <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-menu-cta" target="_blank" rel="noopener noreferrer">
             Make a Reservation
@@ -659,7 +1081,7 @@
               <span class="faq-icon" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">
-              <p>Yes, you can purchase a Dravida gift card. Just ask your server for details.</p>
+              <p>Yes, you can purchase a Dravida gift card. Please ask the server to help you purchase one.</p>
             </div>
           </details>
 
@@ -732,7 +1154,7 @@
         <div class="footer-col">
           <h3 class="footer-col-title">Connect</h3>
           <p><a href="mailto:info@dravidanyc.com">info@dravidanyc.com</a></p>
-          <p><a href="mailto:info@dravidanyc.com?subject=Careers%20Inquiry" class="footer-careers-link">Careers</a></p>
+          <p><a href="mailto:info@dravidanyc.com?subject=Careers%20Inquiry" class="footer-careers-link" data-careers-trigger>Careers</a></p>
           <a href="https://instagram.com/dravidanyc" target="_blank" rel="noopener noreferrer" aria-label="Follow Dravida on Instagram" class="social-link">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -778,6 +1200,26 @@
         <span class="lightbox-caption-title"></span>
       </figcaption>
     </figure>
+  </div>
+
+  <!-- Careers Modal -->
+  <div class="careers-modal" id="careers-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="careers-modal-title">
+    <div class="careers-modal-panel" role="document">
+      <button class="careers-modal-close" type="button" aria-label="Close careers info">&times;</button>
+      <p class="careers-modal-eyebrow">Careers</p>
+      <h2 class="careers-modal-title" id="careers-modal-title">Join Our Team</h2>
+      <div class="careers-modal-ornament" aria-hidden="true">
+        <span class="careers-modal-ornament-line"></span>
+        <span class="careers-modal-ornament-leaf">&#x2766;</span>
+        <span class="careers-modal-ornament-line"></span>
+      </div>
+      <p class="careers-modal-body">
+        We're always looking for passionate people to join our team.
+      </p>
+      <p class="careers-modal-body">
+        Please send resumes to <a href="mailto:info@dravidanyc.com?subject=Careers%20Inquiry" class="careers-modal-email">info@dravidanyc.com</a>.
+      </p>
+    </div>
   </div>
 
   <script src="js/main.js"></script>

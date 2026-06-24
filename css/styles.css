@@ -28,7 +28,8 @@
   --color-burgundy-light: #7A2840; /* burgundy highlight */
   --color-burgundy-dim: rgba(90, 26, 42, 0.15);
   --color-forest: #1A2E1A;        /* dark forest green */
-  --color-forest-light: #2A4428;  /* forest highlight */
+  --color-forest-light: #2A4428;  /* forest highlight — decorative borders/gradients */
+  --color-forest-text: #9CAD6E;   /* lightened sage — readable green text on dark */
   --color-forest-dim: rgba(26, 46, 26, 0.12);
 
   /* Semantic aliases — keeps rest of CSS clean */
@@ -1749,9 +1750,9 @@ a:focus-visible {
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-forest-light);
+  color: var(--color-forest-text);
   margin-top: var(--space-xs);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .visit-address-email {
@@ -2226,8 +2227,8 @@ details[open] .faq-icon::after {
   font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--color-forest-light);
-  opacity: 0.7;
+  color: var(--color-forest-text);
+  opacity: 0.85;
   margin-top: var(--space-sm);
 }
 
@@ -2425,8 +2426,8 @@ details[open] .faq-icon::after {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-forest-light);
-  opacity: 0.45;
+  color: var(--color-forest-text);
+  opacity: 0.65;
   margin-bottom: var(--space-lg);
 }
 

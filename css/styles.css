@@ -892,6 +892,14 @@ a:focus-visible {
   margin-top: var(--space-lg);
 }
 
+.chef-invite-line {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--color-mid);
+  margin-bottom: var(--space-sm);
+}
+
 .btn-chef {
   display: inline-block;
   font-family: var(--font-body);
@@ -1607,6 +1615,14 @@ a:focus-visible {
   white-space: nowrap;
 }
 
+/* Paired reservation CTAs — Resy + OpenTable side by side */
+.cta-pair {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
 /* Zero-proof star marker next to drink names */
 .drink-zero-mark {
   display: inline-block;
@@ -2308,10 +2324,16 @@ details[open] .faq-icon::after {
   transform: translateY(0);
 }
 
+.mobile-reserve-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .mobile-reserve-btn {
   display: block;
+  flex: 1 1 0;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   background: linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-burgundy-light) 100%);
   color: var(--color-cream);
   font-family: var(--font-body);

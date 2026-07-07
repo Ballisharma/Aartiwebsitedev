@@ -892,13 +892,6 @@ a:focus-visible {
   margin-top: var(--space-lg);
 }
 
-.chef-invite-line {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-style: italic;
-  color: var(--color-mid);
-  margin-bottom: var(--space-sm);
-}
 
 .btn-chef {
   display: inline-block;
@@ -1615,14 +1608,6 @@ a:focus-visible {
   white-space: nowrap;
 }
 
-/* Paired reservation CTAs — Resy + OpenTable side by side */
-.cta-pair {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-sm);
-}
-
 /* Zero-proof star marker next to drink names */
 .drink-zero-mark {
   display: inline-block;
@@ -2324,16 +2309,10 @@ details[open] .faq-icon::after {
   transform: translateY(0);
 }
 
-.mobile-reserve-row {
-  display: flex;
-  gap: 0.5rem;
-}
-
 .mobile-reserve-btn {
   display: block;
-  flex: 1 1 0;
   text-align: center;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   background: linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-burgundy-light) 100%);
   color: var(--color-cream);
   font-family: var(--font-body);
@@ -3711,6 +3690,60 @@ details[open] .faq-icon::after {
 .careers-modal-email:focus-visible {
   color: var(--color-accent-light);
   border-bottom-color: var(--color-accent-light);
+}
+
+/* Reserve modal — platform option buttons */
+.reserve-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.reserve-option {
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-cream);
+  border: 1px solid rgba(194, 120, 50, 0.45);
+  transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+
+.reserve-option:hover,
+.reserve-option:focus-visible {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+/* "Your usual" tag — shown only on the guest's remembered platform */
+.reserve-option-hint {
+  display: none;
+  position: absolute;
+  top: -0.6em;
+  right: 0.9rem;
+  padding: 0.1em 0.6em;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  background: var(--color-charcoal);
+  color: var(--color-accent-light);
+  border: 1px solid rgba(194, 120, 50, 0.4);
+  text-transform: uppercase;
+}
+
+.reserve-option.is-preferred {
+  border-color: var(--color-accent);
+}
+
+.reserve-option.is-preferred .reserve-option-hint {
+  display: inline-block;
 }
 
 .careers-modal-close {

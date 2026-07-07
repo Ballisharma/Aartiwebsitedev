@@ -69,13 +69,8 @@
         <li><a href="#visit" class="nav-link">Visit</a></li>
         <li><a href="mailto:info@dravidanyc.com?subject=Careers%20Inquiry" class="nav-link" data-careers-trigger>Careers</a></li>
         <li>
-          <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="nav-link nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Reserve on Resy">
-            Resy
-          </a>
-        </li>
-        <li>
-          <a href="https://www.opentable.com/r/dravida-new-york" class="nav-link nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Reserve on OpenTable">
-            OpenTable
+          <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="nav-link nav-cta" target="_blank" rel="noopener noreferrer" data-reserve-trigger>
+            Reserve
           </a>
         </li>
       </ul>
@@ -131,14 +126,9 @@
       </div>
       <p class="hero-byline reveal" data-delay="200" aria-hidden="true">By Chef Aarthi Sampath</p>
       <p class="hero-location reveal" data-delay="400">New York City</p>
-      <div class="cta-pair reveal" data-delay="800">
-        <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-hero" target="_blank" rel="noopener noreferrer">
-          Reserve on Resy
-        </a>
-        <a href="https://www.opentable.com/r/dravida-new-york" class="btn btn-hero" target="_blank" rel="noopener noreferrer">
-          Reserve on OpenTable
-        </a>
-      </div>
+      <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-hero reveal" data-delay="800" target="_blank" rel="noopener noreferrer" data-reserve-trigger>
+        Make a Reservation
+      </a>
     </div>
     <div class="hero-scroll-cue" aria-hidden="true">
       <span class="hero-scroll-text">Scroll</span>
@@ -493,14 +483,9 @@
           <p class="menu-note">
             Our kitchen is seed-oil free. A 20% gratuity is added to all checks for our service staff. Please inform your server of any dietary restrictions or allergies.
           </p>
-          <div class="cta-pair">
-            <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-menu-cta" target="_blank" rel="noopener noreferrer">
-              Reserve on Resy
-            </a>
-            <a href="https://www.opentable.com/r/dravida-new-york" class="btn btn-menu-cta" target="_blank" rel="noopener noreferrer">
-              Reserve on OpenTable
-            </a>
-          </div>
+          <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-menu-cta" target="_blank" rel="noopener noreferrer" data-reserve-trigger>
+            Make a Reservation
+          </a>
         </div>
       </div>
     </section>
@@ -656,11 +641,8 @@
             </svg>
             <h3 class="visit-detail-title">Reservations</h3>
             <p class="visit-detail-text">Up to 14&nbsp;days in advance</p>
-            <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-outline visit-reserve-btn" target="_blank" rel="noopener noreferrer">
-              Reserve on Resy
-            </a>
-            <a href="https://www.opentable.com/r/dravida-new-york" class="btn btn-outline visit-reserve-btn" target="_blank" rel="noopener noreferrer">
-              Reserve on OpenTable
+            <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-outline visit-reserve-btn" target="_blank" rel="noopener noreferrer" data-reserve-trigger>
+              Reserve a Table
             </a>
           </div>
 
@@ -802,14 +784,9 @@
 
   <!-- Sticky Mobile Reserve Bar -->
   <div class="mobile-reserve" aria-label="Make a reservation">
-    <div class="mobile-reserve-row">
-      <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="mobile-reserve-btn" target="_blank" rel="noopener noreferrer">
-        Resy
-      </a>
-      <a href="https://www.opentable.com/r/dravida-new-york" class="mobile-reserve-btn" target="_blank" rel="noopener noreferrer">
-        OpenTable
-      </a>
-    </div>
+    <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="mobile-reserve-btn" target="_blank" rel="noopener noreferrer" data-reserve-trigger>
+      Reserve a Table
+    </a>
   </div>
 
   <!-- Footer -->
@@ -851,13 +828,10 @@
         </div>
         <div class="footer-col footer-col-center">
           <h3 class="footer-col-title">Reserve</h3>
-          <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-footer-reserve" target="_blank" rel="noopener noreferrer">
-            Book on Resy
+          <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="btn btn-footer-reserve" target="_blank" rel="noopener noreferrer" data-reserve-trigger>
+            Book a Table
           </a>
-          <a href="https://www.opentable.com/r/dravida-new-york" class="btn btn-footer-reserve" target="_blank" rel="noopener noreferrer">
-            Book on OpenTable
-          </a>
-          <p class="footer-resy-note">Up to 14 days ahead</p>
+          <p class="footer-resy-note">Via Resy or OpenTable &middot; up to 14 days ahead</p>
         </div>
         <div class="footer-col">
           <h3 class="footer-col-title">Connect</h3>
@@ -908,6 +882,33 @@
         <span class="lightbox-caption-title"></span>
       </figcaption>
     </figure>
+  </div>
+
+  <!-- Reserve Modal — choose booking platform -->
+  <div class="careers-modal" id="reserve-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="reserve-modal-title">
+    <div class="careers-modal-panel" role="document">
+      <button class="careers-modal-close" type="button" aria-label="Close reservation options">&times;</button>
+      <p class="careers-modal-eyebrow">Reservations</p>
+      <h2 class="careers-modal-title" id="reserve-modal-title">Reserve Your Table</h2>
+      <div class="careers-modal-ornament" aria-hidden="true">
+        <span class="careers-modal-ornament-line"></span>
+        <span class="careers-modal-ornament-leaf">&#x2766;</span>
+        <span class="careers-modal-ornament-line"></span>
+      </div>
+      <p class="careers-modal-body">
+        Choose your preferred booking platform.
+      </p>
+      <div class="reserve-options">
+        <a href="https://resy.com/cities/new-york-ny/venues/dravida" class="reserve-option" target="_blank" rel="noopener noreferrer" data-reserve-platform="resy">
+          Reserve on Resy
+          <span class="reserve-option-hint">Your usual</span>
+        </a>
+        <a href="https://www.opentable.com/r/dravida-new-york" class="reserve-option" target="_blank" rel="noopener noreferrer" data-reserve-platform="opentable">
+          Reserve on OpenTable
+          <span class="reserve-option-hint">Your usual</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- Careers Modal -->

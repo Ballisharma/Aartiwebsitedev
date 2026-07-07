@@ -595,6 +595,87 @@
     });
   }
 
+  // ── Reserve Modal — choose booking platform (Resy / OpenTable) ──
+  function initReserveModal() {
+    var modal = document.getElementById("reserve-modal");
+    var triggers = document.querySelectorAll("[data-reserve-trigger]");
+    if (!modal || !triggers.length) return;
+
+    var closeBtn = modal.querySelector(".careers-modal-close");
+    var panel = modal.querySelector(".careers-modal-panel");
+    var options = modal.querySelectorAll("[data-reserve-platform]");
+    var lastFocused = null;
+    var PREF_KEY = "dravidaReservePlatform";
+
+    function getPref() {
+      try {
+        return localStorage.getItem(PREF_KEY);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setPref(platform) {
+      try {
+        localStorage.setItem(PREF_KEY, platform);
+      } catch (err) {
+        /* private browsing — no-op */
+      }
+    }
+
+    function markPreferred() {
+      var pref = getPref();
+      options.forEach(function (option) {
+        option.classList.toggle(
+          "is-preferred",
+          option.getAttribute("data-reserve-platform") === pref
+        );
+      });
+    }
+
+    function open() {
+      lastFocused = document.activeElement;
+      markPreferred();
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function close() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        open();
+      });
+    });
+
+    // Remember the guest's platform, then let the link open in a new tab
+    options.forEach(function (option) {
+      option.addEventListener("click", function () {
+        setPref(option.getAttribute("data-reserve-platform"));
+        close();
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", close);
+
+    modal.addEventListener("click", function (e) {
+      if (panel && !panel.contains(e.target)) close();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (!modal.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initHero();
     initScrollReveal();
@@ -607,5 +688,6 @@
     initMobileVideo();
     initLightbox();
     initCareersModal();
+    initReserveModal();
   });
 })();

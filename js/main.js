@@ -185,6 +185,54 @@
     );
   }
 
+  // ── Chef Portrait Parallax — photo and arch drift at different depths ──
+  function initChefParallax() {
+    var col = document.querySelector(".chef-image-col");
+    if (!col) return;
+
+    var prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
+    var ticking = false;
+
+    function update() {
+      if (window.innerWidth < 768) {
+        col.style.setProperty("--chef-drift", "0px");
+        return;
+      }
+      var rect = col.parentElement.getBoundingClientRect();
+      var viewportHeight = window.innerHeight;
+      // Only animate while the story section is in view
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        var progress =
+          (viewportHeight - rect.top) / (viewportHeight + rect.height);
+        progress = Math.max(0, Math.min(1, progress));
+        // Drift from +28px down to -28px as you read through
+        var drift = (0.5 - progress) * 56;
+        col.style.setProperty("--chef-drift", drift.toFixed(2) + "px");
+      }
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            update();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    update();
+  }
+
   // ── Logo Sparkle Animation ──
   function initSparkle() {
     var canvas = document.querySelector(".sparkle-canvas");
@@ -553,6 +601,7 @@
     initNavbar();
     initMobileNav();
     initImageBand();
+    initChefParallax();
     initSparkle();
     initMobileReserve();
     initMobileVideo();

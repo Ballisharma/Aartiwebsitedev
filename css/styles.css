@@ -187,6 +187,14 @@ a:focus-visible {
   transform: translateX(0) translateY(0);
 }
 
+.reveal-right {
+  transform: translateX(40px) translateY(0);
+}
+
+.reveal-right.visible {
+  transform: translateX(0) translateY(0);
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-block;
@@ -719,6 +727,221 @@ a:focus-visible {
   color: var(--color-gold);
   margin: var(--space-md) 0;
   letter-spacing: 0.02em;
+}
+
+/* ============================================
+   CHEF PAGE — Our Story
+   Faithful to the reference layout: light page,
+   equal 50/50 columns, centered headings left,
+   flat photo right, plain paragraphs.
+   ============================================ */
+/* No full-bleed hero on this page: keep the navbar solid from the top */
+.page-chef .navbar {
+  background-color: rgba(14, 12, 10, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.page-chef {
+  background-color: var(--color-cream);
+}
+
+.section-chef {
+  background-color: var(--color-cream);
+  padding: calc(var(--nav-height) + var(--space-lg) + 2rem) 0 var(--space-xl);
+}
+
+/* Two equal columns — text left, photo right */
+.chef-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.chef-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.chef-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-mid);
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+/* Gold ornament divider — the site's line/diamond signature */
+.chef-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-md);
+}
+
+.chef-ornament-line {
+  width: 48px;
+  height: 1px;
+  background: var(--color-accent);
+  opacity: 0.6;
+}
+
+.chef-ornament-diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  transform: rotate(45deg);
+  opacity: 0.8;
+}
+
+.chef-body p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.9;
+  color: var(--color-mid);
+  margin-bottom: var(--space-sm);
+}
+
+/* Editorial drop cap on the opening paragraph */
+.chef-body p:first-child::first-letter {
+  font-family: var(--font-heading);
+  font-size: 3.4em;
+  font-weight: 600;
+  line-height: 0.85;
+  color: var(--color-burgundy);
+  float: left;
+  padding-right: 0.12em;
+  padding-top: 0.06em;
+}
+
+.chef-signature {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-burgundy);
+  margin-top: var(--space-sm);
+  letter-spacing: 0.02em;
+}
+
+/* Photo — arched like an Indian doorway, echoing "welcome to my home" */
+.chef-image-col {
+  position: relative;
+  padding: 0 var(--space-sm) var(--space-sm) 0;
+}
+
+/* Desktop: portrait floats gently as you scroll (parallax drift) */
+@media (min-width: 768px) {
+  .chef-image-col {
+    align-self: start;
+    will-change: transform;
+  }
+}
+
+/* Photo layer — drifts with the scroll (JS sets --chef-drift) */
+.chef-image-col picture {
+  display: block;
+  transform: translateY(var(--chef-drift, 0px));
+  transition: transform 0.35s var(--ease-out-quart);
+}
+
+.chef-image {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 999px 999px 0 0;
+  box-shadow: 0 24px 60px rgba(42, 36, 32, 0.22);
+  position: relative;
+  z-index: 1;
+}
+
+/* Hairline gold arch offset behind the portrait — counter-drifts at depth */
+.chef-image-col::after {
+  content: "";
+  position: absolute;
+  top: var(--space-sm);
+  right: 0;
+  bottom: 0;
+  left: var(--space-sm);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px 999px 0 0;
+  opacity: 0.45;
+  z-index: 0;
+  transform: translateY(calc(var(--chef-drift, 0px) * -0.5));
+  transition: transform 0.35s var(--ease-out-quart);
+}
+
+/* Centered invitation below the columns */
+.chef-invite {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+.btn-chef {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+  text-decoration: none;
+  padding: 1rem 2.6rem;
+  border: 1px solid var(--color-burgundy);
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+
+.btn-chef:hover {
+  background-color: var(--color-burgundy);
+  color: var(--color-cream);
+}
+
+/* Quiet entrance — text first, photo follows */
+@keyframes chefFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.chef-content {
+  animation: chefFadeUp 0.9s var(--ease-out-expo) both;
+}
+
+.chef-image-col {
+  animation: chefFadeUp 0.9s var(--ease-out-expo) 0.15s both;
+}
+
+.chef-invite {
+  animation: chefFadeUp 0.9s var(--ease-out-expo) 0.3s both;
+}
+
+@media (max-width: 767px) {
+  .chef-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chef-content,
+  .chef-image-col,
+  .chef-invite {
+    animation: none;
+  }
 }
 
 /* ============================================
